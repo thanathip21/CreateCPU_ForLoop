@@ -1,0 +1,22 @@
+`timescale 1ns / 1ps
+
+module rom(
+    output [7:0] out,
+    input [4:0] addr,
+    input clk
+    );
+reg [16:0] memory [7:0];
+
+always @ (posedge clk)
+begin
+	memory[0] <= 8'b01000000;	//addi R0, R0, 0
+	memory[1] <= 8'b01011111;	//addi R1, R1, 7
+	memory[2] <= 8'b01011011;	//addi R1, R1, 3
+	memory[3] <= 8'b10001111; 	//beq R0, R1, 0x07
+	memory[4] <= 8'b00100000;	//add R2, R0
+	memory[5] <= 8'b01000001;	//addi R0, R0, 1
+	memory[6] <= 8'b11000011;	// j 0x03; PC = PC - 3
+end
+	assign out = memory[addr];
+	
+endmodule
