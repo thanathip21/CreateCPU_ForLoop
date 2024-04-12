@@ -1,0 +1,47 @@
+`timescale 1ns / 1ps
+
+module Instrucion_register(
+   input [7:0] Data,
+   input Load_IR,
+   input Clk,
+	output reg[1:0] Opcode,
+	output reg[1:0] RS,
+	output reg[1:0] RT,
+	output reg[5:0] Const_Addr	 
+    );
+
+reg[7:0]registers;
+
+	always @(posedge Clk)
+		
+		begin
+			if(Load_IR)
+					registers <= Data;
+		end
+		
+	always @(registers)	
+		begin
+			if(registers[7:6] == 2'b00) begin
+				Opcode <= registers[7:6];
+				RS <= registers[5:4];
+				RT <= registers[3:2];
+				Const_Addr <= registers[1:0];
+			end
+				
+			else if(registers[7:6] == 2'b01 || registers[7:6] == 2'b10) begin
+				Opcode <= registers[7:6];
+				RS <= registers[5:4];
+				RT <= registers[3];
+				Const_Addr <= registers[2:0];
+			end
+				
+			else if(registers[7:6] == 2'b11) begin
+				Opcode <= registers[7:6];
+				RS <= 2'bXX;
+				RT <= 2'bXX;
+				Const_Addr <= registers[5:0];
+			end
+		end
+endmodule 
+
+
