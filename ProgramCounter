@@ -1,0 +1,19 @@
+`timescale 1ns / 1ps
+
+module ProgramCount(count,enable,clk,reset,data);  
+
+	input [7:0] data; 
+	input enable,clk,reset;  
+	output reg[3:0] count;  
+  
+  always @(posedge clk or negedge reset)  
+  
+  begin  
+  
+   if(~reset) count <= 4'b0000;  
+   else if(enable)  
+   count <= count + 4'b0001;  
+	if (data[7:6] == 2'b11)
+		count <= count + 3'b100 + 3'b001;
+  end  
+ endmodule
