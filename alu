@@ -1,21 +1,34 @@
 `timescale 1ns / 1ps
 
 module aluTest4(
-    output [7:0] out,
+    output reg[7:0] out,
     input [7:0] a,
     input [7:0] b,
-    input [2:0] control
+    input [1:0] control,
+    input [1:0] func
     );
 	 
-always @(*) begin   
-      case(control)  
-      2'b00: out = a + b;   
-      2'b01: out = a + b;   
-      2'b10: begin 
-		if(a == b)
-			out = ;  //send signal for PC to change position and get out of loop?		
-      endcase  
- end  
+	always @(*) 
+begin
+      case(control)
+      2'b00: 
+		case(func)
+        2'b00: out = a + b;
+        2'b01: out = a - b;
+        2'b10: out = a & b;
+        2'b11: out = a | b;
+       endcase
+		2'b01: out = a + b;
+      2'b10: 
+		begin 
+			if(a == b)
+            out <= 1;
+			else 
+				out <= 0;//send signal for PC to change position and get out of loop?
+		end
+		endcase
+end
 
 
 endmodule
+
