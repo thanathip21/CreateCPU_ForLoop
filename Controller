@@ -1,1 +1,95 @@
+`timescale 1ns / 1ps
 
+module control(
+    input [1:0] stage,
+    input [7:0] IR,
+    output reg PC_E, IR_E, DR_E, PMem_E, DMem_E, DMem_WE, ALU_E,Mux1_Sel, Mux2_Sel,
+    output reg [1:0] Alu_Mode
+);
+
+parameter LOAD = 2'b00, FETCH = 2'b01, DECODE = 2'b10, EXECUTE = 2'b11;
+
+always @(*) begin
+    PC_E = 0;
+    IR_E = 0;
+    DR_E = 0;
+    PMem_E = 0;
+    DMem_E = 0;
+    DMem_WE = 0;
+    ALU_E = 0;
+    Alu_Mode = 2'bXX;
+    Mux1_Sel = 0;
+    Mux2_Sel = 0;
+
+    if (stage == LOAD) begin
+        PMem_E = 1;
+    end
+	 
+	  if (IR[7:6] == 2'b00) begin
+        if (stage == FETCH) begin
+            PC_E = 1;
+            IR_E = 1;
+            PMem_E = 1;
+        end
+        else if (stage == DECODE) begin
+            DR_E = 1;
+            DMem_E = 1;
+            DMem_WE = 1;
+        end
+        else if (stage == EXECUTE) begin
+            DMem_E = 1;
+            ALU_E = 1;
+            Alu_Mode <= IR[7:6];
+            Mux1_Sel = 1;
+            Mux2_Sel = 1;
+        end
+    end
+	 
+	 else if (IR[7:6] == 2'b01) begin
+        if (stage == FETCH) begin
+            PC_E = 1;
+            PMem_E = 1;
+        end
+        else if (stage == DECODE) begin
+            DR_E = 1;
+            DMem_E = 1;
+            DMem_WE = 1;
+        end
+        else if (stage == EXECUTE) begin
+            IR_E = 1;
+            ALU_E = 1;
+            Alu_Mode <= IR[7:6];
+            Mux1_Sel = 1;
+            Mux2_Sel = 0; // corrected typo here
+        end
+    end
+	 
+	 else if (IR[7:6] == 2'b10) begin
+        if (stage == FETCH) begin
+            PC_E = 1;
+            IR_E = 1;
+            PMem_E = 1;
+        end
+        else if (stage == DECODE) begin
+            DR_E = 1;
+            DMem_E = 1;
+        end
+        else if (stage == EXECUTE) begin
+            DMem_E = 1;
+            DMem_WE = 1;
+            ALU_E = 1;
+            Alu_Mode <= IR[7:6];
+        end
+    end
+
+else if (IR[7:6] == 2'b11) begin
+        if (stage == FETCH) begin
+            PC_E = 1;
+            IR_E = 1;
+            PMem_E = 1;
+            Mux1_Sel = 0;
+        end
+    end
+end
+
+endmodule
