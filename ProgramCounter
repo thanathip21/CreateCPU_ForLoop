@@ -6,6 +6,7 @@ module ProgramCount(count,enable,clk,reset,data);
 	input enable,clk,reset;  
 	output reg[3:0] count;  
   
+
   always @(posedge clk or negedge reset)  
   
   begin  
@@ -15,5 +16,7 @@ module ProgramCount(count,enable,clk,reset,data);
    count <= count + 4'b0001;  
 	if (data[7:6] == 2'b11)
 		count <= count + 3'b100 + 3'b001;
+	if (data[2:0] == 3'b100)
+		count <= count + 3'b100;
   end  
  endmodule
