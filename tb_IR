@@ -1,0 +1,44 @@
+`timescale 1ns / 1ps
+
+module tbw_IR;
+
+	// Inputs
+	reg [7:0] Data;
+	reg Load_IR;
+	reg Clk;
+
+	// Outputs
+	wire [1:0] Opcode;
+	wire [1:0] RS;
+	wire [1:0] RT;
+	wire [5:0] Const_Addr;
+
+	// Instantiate the Unit Under Test (UUT)
+	Instrucion_register uut (
+		.Data(Data), 
+		.Load_IR(Load_IR), 
+		.Clk(Clk), 
+		.Opcode(Opcode), 
+		.RS(RS), 
+		.RT(RT), 
+		.Const_Addr(Const_Addr)
+	);
+	initial begin
+		Clk = 0;
+		forever #50 Clk = ~Clk;
+	end
+
+	initial begin
+		// Initialize Inputs
+		Load_IR = 1; #100;
+		Data = 60; #100;
+		Data = 120; #100;
+		Data = 200; #100 $finish;
+		
+        
+		// Add stimulus here
+
+	end
+      
+endmodule
+
