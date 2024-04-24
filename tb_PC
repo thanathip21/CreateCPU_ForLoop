@@ -1,0 +1,38 @@
+`timescale 1ns / 1ps
+
+module tbw_PC;
+
+	// Inputs
+	reg enable;
+	reg clk;
+	reg reset;
+	reg [7:0] data;
+
+	// Outputs
+	wire [3:0] count;
+
+	// Instantiate the Unit Under Test (UUT)
+	ProgramCount uut (
+		.count(count), 
+		.enable(enable), 
+		.clk(clk), 
+		.reset(reset), 
+		.data(data)
+	);
+	
+	initial begin
+		clk = 0;
+		forever #50 clk = ~clk;
+	end
+	
+	initial begin
+		// Initialize Inputs
+		reset = 0;  #100;
+		enable = 1; #100;
+		reset = 1; #100;	
+     
+		// Add stimulus here
+
+	end
+      
+endmodule
