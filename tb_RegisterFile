@@ -1,0 +1,296 @@
+Lxo_Pxm_--_Kung
+leokung.
+ไม่ระบุ
+
+ไอเชีี้ยข้าว — 20/03/2024 0:21
+ALU จะทำหน้าที่ ควบคุมการทำงานของ ของ input ซึ่ง ALU จะดำเนินการ บวก ลบ logic ต่างๆ
+Pc จะทำหน้าที่ นับตำแหน่งที่ชี้ไปในmemory
+ALU (Arithmetic Logic Unit) ที่ให้มานั้นเป็นโมดูลที่ทำหน้าที่ดำเนินการทางคณิตศาสตร์และตรรกะต่างๆ โดยมีการควบคุมการทำงานโดย input ที่เรียกว่า alu_control ซึ่งระบุฟังก์ชันที่ต้องการให้ ALU ดำเนินการ เช่นการบวก ลบ และตรรกะต่าง ๆ
+PC (Program Counter) มันใช้ในการเก็บที่อยู่ของคำสั่งที่จะถูกดำเนินการต่อไปในโปรแกรม ในหน่วยความจำโปรแกรม   โดยในกระบวนการการทำงานของ CPU ทุกครั้งที่มีการดึงคำสั่งใหม่จากหน่วยความจำโปรแกรม ที่อยู่ของคำสั่งถัดไปจะถูกโหลดเข้าสู่ PC ซึ่งใช้ในการวางแผนการทำงานต่อไปของ CPU และให้มันเริ่มต้นการดำเนินการคำสั่งถัดไป
+ไอเชีี้ยข้าว — 26/03/2024 0:04
+ภาพ
+ไอเชีี้ยข้าว — 02/04/2024 13:23
+ภาพ
+itsnaoki — 02/04/2024 22:38
+https://www.canva.com/design/DAGAOh4bHzQ/SEhPVWoO_iYRnecaXDjr8g/edit?utm_content=DAGAOh4bHzQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+Canva
+Group!!! Assignment week 8 CPE214_T
+Group!!! Assignment week 8 CPE214_T
+itsnaoki — 03/04/2024 21:46
+https://www.cp.eng.chula.ac.th/~prabhas//talk/2013/chip-programming/doc/chap4-9.htm
+Control unit
+itsnaoki — 04/04/2024 0:58
+https://www.cp.eng.chula.ac.th/~krerk/publication/THBook1-8.pdf
+Lxo_Pxm_--_Kung — 06/04/2024 21:34
+@itsnaoki
+https://www.canva.com/design/DAGBWdXwJUU/JB7Pc4m8Ks7Ys3axI56yzw/edit?utm_content=DAGBWdXwJUU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+Canva
+สำเนาของ Group!!! Assignment week 8 CPE214_T
+สำเนาของ Group!!! Assignment week 8 CPE214_T
+Lxo_Pxm_--_Kung — 06/04/2024 21:45
+https://www.fpga4student.com/2017/01/verilog-code-for-single-cycle-MIPS-processor.html
+Verilog code for 16-bit single cycle MIPS processor
+Verilog code for MIPS CPU, 16-bit single cycle MIPS CPU in Verilog. Full design and Verilog code for the processor are presented.
+ภาพ
+itsnaoki — 06/04/2024 21:50
+ภาพ
+itsnaoki — 06/04/2024 22:02
+https://github.com/NayanaBannur/8-bit-RISC-Processor
+GitHub
+GitHub - NayanaBannur/8-bit-RISC-Processor: A Verilog RTL model of ...
+A Verilog RTL model of a simple 8-bit RISC processor - NayanaBannur/8-bit-RISC-Processor
+https://www.youtube.com/watch?v=tzxaf-CNU3Q&t=141s
+YouTube
+Visual Electric
+State Machines - coding in Verilog with testbench and implementatio...
+ภาพ
+https://github.com/Caskman/MIPS-Processor-in-Verilog/blob/master/DataMemory.v
+GitHub
+MIPS-Processor-in-Verilog/DataMemory.v at master · Caskman/MIPS-Pro...
+Processor repo. Contribute to Caskman/MIPS-Processor-in-Verilog development by creating an account on GitHub.
+MIPS-Processor-in-Verilog/DataMemory.v at master · Caskman/MIPS-Pro...
+itsnaoki — 06/04/2024 22:28
+https://esrd2014.blogspot.com/p/8-bit-arithmetic-and-logic-unit.html
+8-bit Arithmetic and Logic Unit
+Introduction ALU is the fundamental building block of the processor, which is responsible for carrying out the arithmetic and logic ...
+ภาพ
+// Define instruction formats
+typedef struct {
+    reg [2:0] opcode;
+    reg [2:0] rs;
+    reg [2:0] rt;
+    reg [2:0] rd;
+ขยาย
+message.txt
+3 KB
+itsnaoki — 06/04/2024 23:26
+ภาพ
+https://www.slideshare.net/STEPHENMOIRANGTHEM/design-and-implementation-of-32-bit-alu-using-verilog
+SlideShare
+Design and Implementation of a 32-bit ALU in Verilog
+Design and Implementation of a 32-bit ALU in Verilog - Download as a PDF or view online for free
+ภาพ
+https://eng.libretexts.org/Bookshelves/Computer_Science/Programming_Languages/Introduction_To_MIPS_Assembly_Language_Programming_(Kann)/04%3A_Translating_Assembly_Language_into_Machine_Code/4.01%3A_Instruction_Formats
+Engineering LibreTexts
+4.1: Instruction Formats
+ภาพ
+Lxo_Pxm_--_Kung — 07/04/2024 0:24
+ประเภทไฟล์ที่แนบ: document
+TO_DO_CPE214.docx
+71.24 KB
+Lxo_Pxm_--_Kung — 08/04/2024 22:58
+ภาพ
+Lxo_Pxm_--_Kung — 08/04/2024 23:39
+https://www.canva.com/design/DAGBWdXwJUU/JB7Pc4m8Ks7Ys3axI56yzw/edit?utm_content=DAGBWdXwJUU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+Canva
+สำเนาของ Group!!! Assignment week 8 CPE214_T
+สำเนาของ Group!!! Assignment week 8 CPE214_T
+itsnaoki — 09/04/2024 21:36
+ภาพ
+Lxo_Pxm_--_Kung — 09/04/2024 22:15
+https://www.canva.com/design/DAGBzyU96eg/ZtQjQCYKuvVnY54n7FcuhQ/edit?utm_content=DAGBzyU96eg&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+Canva
+CPE214_LAB
+CPE214_LAB
+ไอเชีี้ยข้าว — 10/04/2024 1:52
+aa
+itsnaoki — 10/04/2024 13:27
+ภาพ
+ภาพ
+ภาพ
+itsnaoki — 10/04/2024 13:47
+ภาพ
+ภาพ
+itsnaoki — 11/04/2024 22:07
+https://www.youtube.com/watch?v=lqHKJyYCkXk&t=552s
+YouTube
+Karen Janice Mazidi
+CA16 - MIPS control signals
+ภาพ
+@ไอเชีี้ยข้าว
+https://www.youtube.com/watch?v=TQNZxIHYDHc
+YouTube
+Izzat El Hajj
+Lecture 23 - Datapath Control Signals
+ภาพ
+Lxo_Pxm_--_Kung — 12/04/2024 22:55
+ประเภทไฟล์ที่แนบ: archive
+CreateCPU_ForLoop-main.zip
+2.29 KB
+itsnaoki — 12/04/2024 23:36
+https://www3.ntu.edu.sg/home/smitha/fyp_gerald/jrInstruction.html
+hhhhhhhh — 13/04/2024 0:09
+module aluTest4(
+    output [7:0] out,
+    input [7:0] a,
+    input [7:0] b,
+    input [1:0] control
+    input [1:0] func
+ขยาย
+message.txt
+1 KB
+module aluTest4(
+    output [7:0] out,
+    input [7:0] a,
+    input [7:0] b,
+    input [1:0] control
+    input [1:0] func
+    );
+
+always @(*) begin
+      case(control)
+      2'b00: case(func)
+        2'b00: out = a + b;
+        2'b01: out = a - b;
+        2'b10: out = a & b;
+        2'b11: out = a | b;
+         endcase
+      2'b01: out = a + b;
+      2'b10: begin 
+        if(a == b)
+            out <= 1;  //send signal for PC to change position and get out of loop?
+      endcase
+ end
+
+
+endmodule
+hhhhhhhh — 14/04/2024 23:03
+`timescale 1ns / 1ps
+
+module control(
+    input[1:0] stage,
+input[7:0] IR,
+output reg PC_E, IR_E, DR_E, PMem_E, DMem_E, DMem_WE, ALU_E, ALU_Mode, Mux1_Sel, Mux2_Sel
+ขยาย
+message.txt
+2 KB
+hhhhhhhh — 14/04/2024 23:16
+`timescale 1ns / 1ps
+
+module control(
+    input[1:0] stage,
+input[7:0] IR,
+output reg PC_E, IR_E, DR_E, PMem_E, DMem_E, DMem_WE, ALU_E, ALU_Mode, Mux1_Sel, Mux2_Sel
+ขยาย
+message.txt
+2 KB
+`timescale 1ns / 1ps
+
+module control(
+    input[1:0] stage,
+input[7:0] IR,
+output reg PC_E, IR_E, DR_E, PMem_E, DMem_E, DMem_WE, ALU_E, ALU_Mode, Mux1_Sel, Mux2_Sel
+ขยาย
+message.txt
+2 KB
+itsnaoki — 16/04/2024 21:22
+ภาพ
+itsnaoki — เมื่อวานนี้ เวลา 17:36
+ประเภทไฟล์ที่แนบ: archive
+CreateCPU_ForLoop-main.rar
+2.90 KB
+@hhhhhhhh
+อันนี้แก้ไขไปนิดหน่อยมั้ง
+leo ยังไม่ตอบ
+itsnaoki — เมื่อวานนี้ เวลา 17:52
+ประเภทไฟล์ที่แนบ: archive
+CreateCPU_ForLoop-main.zip
+3.34 KB
+@hhhhhhhh
+itsnaoki — วันนี้ เวลา 21:28
+`timescale 1ns / 1ps
+
+////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer:
+//
+ขยาย
+message.txt
+2 KB
+﻿
+`timescale 1ns / 1ps
+
+////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer:
+//
+// Create Date:   14:09:53 04/02/2024
+// Design Name:   Registerfile
+// Module Name:   /home/ise/CPE/My_Register_file/tb_registerfile.v
+// Project Name:  My_Register_file
+// Target Device:  
+// Tool versions:  
+// Description: 
+//
+// Verilog Test Fixture created by ISE for module: Registerfile
+//
+// Dependencies:
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+////////////////////////////////////////////////////////////////////////////////
+
+module tb_registerfile;
+
+	// Inputs
+	reg clk;
+	reg clr;
+	reg RegWrite;
+	reg [1:0] writereg;
+	reg [1:0] readreg1;
+	reg [1:0] readreg2;
+	reg [7:0] data;
+
+	// Outputs
+	wire [7:0] read1;
+	wire [7:0] read2;
+
+	// Instantiate the Unit Under Test (UUT)
+	Registerfile uut (
+		.clk(clk), 
+		.clr(clr), 
+		.RegWrite(RegWrite), 
+		.writereg(writereg), 
+		.readreg1(readreg1), 
+		.readreg2(readreg2), 
+		.data(data), 
+		.read1(read1), 
+		.read2(read2)
+	);
+
+	initial begin
+		// Initialize Inputs
+		clk = 0;
+		clr = 1;
+		RegWrite = 0;
+		writereg = 0;
+		readreg1 = 0;
+		readreg2 = 0;
+		data = 0;
+	end
+	
+	always #5 clk = ~clk;
+	
+	initial begin
+		// Initialize Inputs
+		#10 clr = 0;
+		
+		#50 RegWrite = 1;
+		writereg = 2'b00;
+		data = 8'b00000011;
+		
+		#50 RegWrite = 1;
+		writereg = 2'b01;
+		data = 8'b00000111;
+		
+
+		#50 readreg1 = 2'b00;
+		#50 readreg2 = 2'b01;
+	end
+      
+endmodule
+
+message.txt
+2 KB
