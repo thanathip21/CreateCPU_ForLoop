@@ -1,0 +1,53 @@
+`timescale 1ns / 1ps
+
+module tbw_control;
+
+	// Inputs
+	reg [1:0] stage;
+	reg [7:0] IR;
+
+	// Outputs
+	wire PC_E;
+	wire IR_E;
+	wire DR_E;
+	wire PMem_E;
+	wire DMem_E;
+	wire DMem_WE;
+	wire ALU_E;
+	wire Mux1_Sel;
+	wire Mux2_Sel;
+	wire [1:0] Alu_Mode;
+
+	// Instantiate the Unit Under Test (UUT)
+	control uut (
+		.stage(stage), 
+		.IR(IR), 
+		.PC_E(PC_E), 
+		.IR_E(IR_E), 
+		.DR_E(DR_E), 
+		.PMem_E(PMem_E), 
+		.DMem_E(DMem_E), 
+		.DMem_WE(DMem_WE), 
+		.ALU_E(ALU_E),
+		.Mux1_Sel(Mux1_Sel), 
+		.Mux2_Sel(Mux2_Sel), 
+		.Alu_Mode(Alu_Mode)
+	);
+
+	initial begin
+		// Initialize Inputs
+		
+		IR = 8'b00101101;	stage =  2'b00; #100; stage =  2'b01; #100;	stage =  2'b10;#100;	stage =  2'b11;#100;
+		IR = 8'b01101101; stage =  2'b00; #100; stage =  2'b01; #100;	stage =  2'b10;#100;	stage =  2'b11;#100;
+		IR = 8'b10101101;	stage =  2'b00; #100; stage =  2'b01; #100;	stage =  2'b10;#100;	stage =  2'b11;#100;
+		IR = 8'b11101101;	stage =  2'b00; #100; stage =  2'b01; #100;	stage =  2'b10;#100;	stage =  2'b11;#100 $finish;
+
+		// Wait 100 ns for global reset to finish
+		
+        
+		// Add stimulus here
+
+	end
+      
+endmodule
+
