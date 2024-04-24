@@ -1,0 +1,38 @@
+`timescale 1ns / 1ps
+
+module tbw_rom;
+
+	// Inputs
+	reg [4:0] addr;
+	reg clk;
+
+	// Outputs
+	wire [7:0] out;
+
+	// Instantiate the Unit Under Test (UUT)
+	rom uut (
+		.out(out), 
+		.addr(addr), 
+		.clk(clk)
+	);
+	initial begin
+		clk = 0;
+		forever #50 clk = ~clk;
+	end
+	initial begin
+		// Initialize Inputs
+		addr = 0;	#100;
+		addr = 1;	#100;
+		addr = 4;	#100;
+		addr = 5;	#100;
+		addr = 6;	#100;
+		addr = 2;	#100;
+		addr = 3;	#100 $finish; 
+		
+        
+		// Add stimulus here
+
+	end
+      
+endmodule
+
