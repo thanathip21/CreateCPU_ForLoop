@@ -1,0 +1,33 @@
+`timescale 1ns / 1ps
+
+module tbw_ALUTEST4;
+
+	// Inputs
+	reg [7:0] a;
+	reg [7:0] b;
+	reg [1:0] control;
+	reg [1:0] func;
+
+	// Outputs
+	wire [7:0] out;
+
+	// Instantiate the Unit Under Test (UUT)
+	aluTest4 uut (
+		.out(out), 
+		.a(a), 
+		.b(b), 
+		.control(control), 
+		.func(func)
+	);
+
+	initial begin
+		// Initialize Inputs
+		a = 12;	b = 12;	control = 2'b10;	#100;
+		a = 12;	b = 8;	control = 2'b10;	#100;
+	
+        
+		// Add stimulus here
+
+	end
+      
+endmodule
