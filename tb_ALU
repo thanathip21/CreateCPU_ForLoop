@@ -1,6 +1,7 @@
 `timescale 1ns / 1ps
 
-module tbw_ALUTEST4;
+
+module tbw_alu;
 
 	// Inputs
 	reg [7:0] a;
@@ -22,12 +23,15 @@ module tbw_ALUTEST4;
 
 	initial begin
 		// Initialize Inputs
+	
 		a = 12;	b = 12;	control = 2'b10;	#100;
 		a = 12;	b = 8;	control = 2'b10;	#100;
-	
+		a = 12;	b = 7;	control = 2'b00; func = 2'b00; #100;
+
         
 		// Add stimulus here
 
 	end
       
 endmodule
+
